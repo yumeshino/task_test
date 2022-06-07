@@ -13,8 +13,13 @@ class TestController extends Controller
     {
         $values = Test::all();
 
-        //die + var_dump
-        //dd($values);
+        $collection = collect([1, 2, 3, 4, 5, 6, 7]);
+
+        $chunks = $collection->chunk(4);
+
+        $chunks->all();
+
+        dd($chunks);
 
         return view('tests.test',compact('values'));
     }
