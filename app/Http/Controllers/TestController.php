@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Model\Test;
 
+//ファザードを使いたい時には最後の部分をかえてつかう
 use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
-    
+
     //
     public function index()
     {
