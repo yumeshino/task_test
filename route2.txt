@@ -11,3 +11,4 @@
 |        | GET|HEAD | home                          | home                  | App\Http\Controllers\HomeController@index                     | web,auth                                             |
 |        | GET|HEAD | tests/test                    |                       | App\Http\Controllers\TestController@index                     | web                                                  |
 +--------+----------+-------------------------------+-----------------------+---------------------------------------------------------------+------------------------------------------------------+
+
