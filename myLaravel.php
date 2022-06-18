@@ -57,3 +57,8 @@ php artisan migrate:rollback
 php artisan migrate:refresh
 一度すべてのテーブルを削除し、その後もう一度マイグレーションしていきます。
 
+tinker（データベース簡易接続）
+データベースと簡単に繋ぐための仕組み
+$php artisan tinker
+
+
