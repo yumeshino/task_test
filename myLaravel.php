@@ -62,3 +62,12 @@ tinker（データベース簡易接続）
 $php artisan tinker
 
 
+ルーティングファイル
+→routeasファイルのweb.phpファイル
+
+コントローラーファイル
+→appファイルのhttpフォルダの命名したフォルダ名
+
+ビューファイル
+→resourcesファイルのviewsフォルダの中に命名したフォルダを作る
+  viewsファイルは基本的に.bladeをつける
