@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+//モデルのデータを持ってくる為にuse構文を使う
 use App\Model\Test;
 
 //ファザードを使いたい時には最後の部分をかえてつかう
