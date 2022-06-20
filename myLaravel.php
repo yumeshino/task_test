@@ -82,3 +82,8 @@ $php artisan tinker
 compact関数
 →変数をviewsファイルに表示する際に使う
   複数の変数でも渡すことができる
+
+ヘルパ関数
+ララベルが用意している便利関数
+その中でも特によく使うもの
+route,auth,app,bcrypt,collect,dd,env,factory,old,viewなど
