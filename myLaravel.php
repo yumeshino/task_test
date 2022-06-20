@@ -87,3 +87,11 @@ compact関数
 ララベルが用意している便利関数
 その中でも特によく使うもの
 route,auth,app,bcrypt,collect,dd,env,factory,old,viewなど
+
+コレクション型
+配列を拡張した型でララベル独自の型
+データベースからデータを取得時はコレクション型になっている
+コレクション型専用の記述可能
+コレクション型の独自の型もたくさん用意されている
+その中でもよく見る関数は
+all,chunk,get,pluck,whereln,toArray
