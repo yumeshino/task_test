@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('tests/test','TestController@index');
 
+//REST
+Route::resource('contacts','ContactFormController');
+
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
