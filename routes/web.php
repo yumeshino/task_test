@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,9 +21,15 @@ Route::get('/', function () {
 
 Route::get('tests/test','TestController@index');
 
-//REST
-Route::resource('contacts','ContactFormController');
+Route::get('contact/index','ContactFormController@index');
 
-// Auth::routes();
+Route::group(['prefex' => 'contact', 'middleware' => 'auth'], function(){
+    Route::get('index','ContactFormController@index')->name('contact.index');
+});
+
+//REST
+// Route::resource('contacts','ContactFormController');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
