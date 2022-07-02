@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Model\ContactForm;
+use Illuminate\Support\Facades\DB;
+
 
 class ContactFormController extends Controller
 {
@@ -15,7 +17,15 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        //エロクワント ORマッパー
+        // $contacts = ContactForm::all();
+
+        //クエリビルダ
+        $contacts = DB::table('contact_forms')
+        ->select('id','name','title','created_at')
+        ->get();
+
+        return view('contact.index',compact('contacts'));
     }
 
     /**
