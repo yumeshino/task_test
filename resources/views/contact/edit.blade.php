@@ -15,7 +15,8 @@
                     @endif
 
                     editです
-                    <form method="GET" action="">
+                    <form method="POST" action="{{ route('contact.update',['id' => $contact->id]) }}">
+                        
                     @csrf
                     氏名
                     <input type="text" name="name" value="{{ $contact->name }}">
