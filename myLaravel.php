@@ -123,3 +123,43 @@ Laravelkで組み込まれたテンプレートエンジン
 ２、＠で書かれたものがbladeの構文になる
 ３、{{}}の理由
 ４、bladeの便利機能、レイアウト定義
+
+ーーーーーーーーーーーセクション７ーーーーーーーーーーーーーーーーーーーーーー
+
+・マイグレーションでテーブルを追加する場合
+  →コマンド
+    php artisan make:migration add_votes_to_users_table --table=users
+
+    新規作成の時はcreate
+    Schema::create('contact_forms', function (Blueprint $table) 
+
+    追加した時はtable
+    Schema::table('contact_forms', function (Blueprint $table) 
+          {
+            $table->string('title', 50)->after('name');
+            //afterの修飾子で追加する場所を指定できる
+          });
+
+    追加したものを削除したい場合
+    ①マイグレーションファイルにdropColumnを追加
+     public function down()
+    {
+        Schema::table('contact_forms', function (Blueprint $table) {
+            //
+            $table->dropColumn('title');
+        });
+    }
+
+    ②ターイナルに
+      $php artisan migrate:rollback
+      一つ前の動作にもどる（追加したぶんがなかったことになる）
+
+      $php artisan migrate:status
+      マイグレーションの実行状況が確認できる
+
+      $php artisan migrate:rollback --step=2
+      stepでいくつ戻るかの指定もできる
+
+
+    
+
