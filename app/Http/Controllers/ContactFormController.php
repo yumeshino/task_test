@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Model\ContactForm;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
