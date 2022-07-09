@@ -40,8 +40,8 @@
                     <input type="url" name="url">
                     <br>
                     性別
-                    <input type="radio" name="gender" value="0">男性</input>
-                    <input type="radio" name="gender" value="1">女性</input>
+                    <input type="radio" name="gender" value="0">男性
+                    <input type="radio" name="gender" value="1">女性
                     <br>
                     年齢
                     <select name="age">
