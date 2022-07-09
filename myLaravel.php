@@ -160,6 +160,9 @@ Laravelkで組み込まれたテンプレートエンジン
       $php artisan migrate:rollback --step=2
       stepでいくつ戻るかの指定もできる
 
-
-    
+ーーーーーーーーーーーーーーーーーーーーーーーーー
+リソースコントローラー
+Laravelリソースルートは一行のコードで、典型的な「CRUD」ルートをコントローラへ割り付ける。
+make:controller Artisanコマンドを使えば、このようなコントローラは素早く生成できる
+php artisan make:controller PhotoController --resource
 
