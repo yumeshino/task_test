@@ -220,5 +220,58 @@ nameメソッドはグループ内の各ルート名へ、指定した文字列�
 
   エラーメッセージの変更の仕方
   resources/lang/ja/validationから変更できる
-  
+----------------------------------------------
+  シーダー
+  データベースに初期データを登録するために使用する
+  シーダ（初期値設定）クラスを使用し、テストデーターをデーターベースに設定するシンプルな方法もLaravelには備わっている。全シーダクラスはdatabase/seedsに保存
 
+  シーダクラス定義
+ シーダを生成するには、make:seeder Artisanコマンドを実行。フレームワークが生成するシーダはすべてdatabase/seedsディレクトリに設置される。
+php artisan make:seeder UsersTableSeeder
+
+
+シーダの実行
+シーダクラスを書き上げたら、Composerのオートローダを再生成するために、dump-autoloadコマンドを実行する必要がある
+composer dump-autoload
+データベースへ初期値を設定するためにdb:seed Artisanコマンドを使用。デフォルトでdb:seedコマンドは、他のシーダクラスを呼び出すDatabaseSeederクラスを実行する。特定のファイルを個別に実行したい場合は、--classオプションを使いシーダを指定する。
+php artisan db:seed
+php artisan db:seed --class=UsersTableSeeder
+もしくはテーブルをすべてドロップし、マイグレーションを再実行するmigrate:freshコマンドを使っても、データベースに初期値を設定可能。このコマンドはデータベースを完全に作成し直したい場合に便利。
+php artisan migrate:fresh --seed
+
+
+ダミーデータの作り方
+  Laravelでダミー（テスト）データを作るにはfakerと
+  factoryでダミーデータを大量生成
+  factoryの中でfakerが働いてダミーデータをいくつも作って、それをseederにセットして大量のダミーデータを作る、みたいな形
+
+  ファクトリの生成
+  ファクトリを生成するには、make:factory Artisanコマンドを使用。新しいファクトリは、database/factoriesディレクトリに設置される。
+  ※作成したファイルは実際にダミーデータを作るファイルを指定すること。defineの部分も合わせる
+  ※日本語設定に直すためにconfig/app.phpのfaker_locale => ja_JPに直す
+
+  作成したfactoryファイルに設定したいfakerを記述していく
+  $factory->define(ContactForm::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'title' => $faker->realText(50),
+        'email' => $faker->unique()->email,
+        'url' => $faker->url,
+        'gender' => $faker->randomElement(['0','1']),
+        'age' => $faker->numberBetween($min = 1,$max = 6),
+        'contact' => $faker->realText(200),
+
+    ];
+});
+
+
+seederに書き加えていく
+public function run()
+    {
+      factory(ContactForm::class,200)->create();//200個のダミーデータを生成
+    }
+  ※この時に追加するseederのファイルはfactoryのファイル共通のものに追記する
+  なければArtisanコマンドで生成する
+  基本的にseederはテーブルごとに生成する
+  seederを変えたらcomposer dump-autoloadを実行する
+  
