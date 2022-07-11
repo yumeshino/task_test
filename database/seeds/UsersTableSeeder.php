@@ -22,11 +22,11 @@ class UsersTableSeeder extends Seeder
             ],[
             'name' => 'いいい',
             'email' => 'test2@test.com',
-            'password' => Hash::make('passwaord123'),
+            'password' => Hash::make('password123'),
             ],[
             'name' => 'ううう',
             'email' => 'test3@test.com',
-            'password' => Hash::make('passwaord123'),
+            'password' => Hash::make('password123'),
             ]
         ]);
 
