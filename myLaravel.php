@@ -274,4 +274,7 @@ public function run()
   なければArtisanコマンドで生成する
   基本的にseederはテーブルごとに生成する
   seederを変えたらcomposer dump-autoloadを実行する
+
+  ----------------------------------------
+
   

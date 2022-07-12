@@ -29,7 +29,6 @@ class ContactFormController extends Controller
         // ->paginate(20);
 
         //検索フォーム
-
         $query = DB::table('contact_forms');
 
         //もしキーワードがあったら
