@@ -235,7 +235,7 @@ nameメソッドはグループ内の各ルート名へ、指定した文字列�
 シーダの実行
 シーダクラスを書き上げたら、Composerのオートローダを再生成するために、dump-autoloadコマンドを実行する必要がある
 composer dump-autoload
-データベースへ初期値を設定するためにdb:seed Artisanコマンドを使用。デフォルトでdb:seedコマンドは、他のシーダクラスを呼び出すDatabaseSeederクラスを実行する。特定のファイルを個別に実行したい場合は、--classオプションを使いシーダを指定する。
+また、データベースへ初期値を設定するためにdb:seed Artisanコマンドを使用。デフォルトでdb:seedコマンドは、他のシーダクラスを呼び出すDatabaseSeederクラスを実行する。特定のファイルを個別に実行したい場合は、--classオプションを使いシーダを指定する。
 php artisan db:seed
 php artisan db:seed --class=UsersTableSeeder
 もしくはテーブルをすべてドロップし、マイグレーションを再実行するmigrate:freshコマンドを使っても、データベースに初期値を設定可能。このコマンドはデータベースを完全に作成し直したい場合に便利。
@@ -243,11 +243,10 @@ php artisan migrate:fresh --seed
 
 
 ダミーデータの作り方
-  Laravelでダミー（テスト）データを作るにはfakerと
-  factoryでダミーデータを大量生成
-  factoryの中でfakerが働いてダミーデータをいくつも作って、それをseederにセットして大量のダミーデータを作る、みたいな形
+  Laravelでダミー（テスト）データを作るにはfakerとfactoryでダミーデータを大量生成する
+  factoryの中でfakerが働いてダミーデータをいくつも作って、それをseederにセットして大量のダミーデータを作る、みたいなイメージ
 
-  ファクトリの生成
+  1.ファクトリの生成
   ファクトリを生成するには、make:factory Artisanコマンドを使用。新しいファクトリは、database/factoriesディレクトリに設置される。
   ※作成したファイルは実際にダミーデータを作るファイルを指定すること。defineの部分も合わせる
   ※日本語設定に直すためにconfig/app.phpのfaker_locale => ja_JPに直す
