@@ -277,5 +277,9 @@ public function run()
   seederを変えたらcomposer dump-autoloadを実行する
 
   ----------------------------------------
-
+要件定義・基本設計（デザイン）
+誰が何をどう使いたいか→抽象から具体的へ
+    画面設計・・view
+    機能設計・・Controller
+    データ設計・・Model
   
