@@ -301,3 +301,10 @@ FK・・・外部キー制約（foreign）
 設定方法
 マイグレーションファイルに
  $table->foreign('外部キーをつけたい列')->references('相手先の列')->on('相手先のテーブル名');
+
+
+ 多対多
+ 中間テーブル（pivot table）を作成
+ PKをid以外にする場合には
+ マイグレーションにprimaryを追記
+ モデル・・・belongsTo
