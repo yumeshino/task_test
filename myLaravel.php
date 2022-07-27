@@ -287,5 +287,8 @@ public function run()
   →drow.io
   ------------------------------------------------
 
-
-
+１対多
+→主（親）hasMany
+  従（子）belongsTo
+モデルにhasMany/belongsToを追加
+親モデル名_idにしておくと楽
