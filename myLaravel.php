@@ -342,3 +342,8 @@ FK・・・外部キー制約（foreign）
  Laravelでテーブルを作成する場合にはbigIncrementがprimaryキー
  なのでその部分を変更したときには改めて設定する必要がある
   $table->primary(['route_id','shop_id']);
+
+モデルでDBと紐付ける用意
+マイグレーションでDBのテーブルを定義
+シーダーでテーブルのデータを挿入
+→DBでデータが格納される
