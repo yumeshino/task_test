@@ -351,3 +351,29 @@ FK・・・外部キー制約（foreign）
 
 gitignoreファイル
 githubにアップロードしないファイルやフォルダを書くファイル
+----------------------------------------------------------------------
+サンプルプロダクトダウンロード後にすること
+
+git clone サンプルプロダクトURL
+  ダウンロードコマンド
+
+php artisan key:generate
+ キーの生成
+
+php artisan migrate
+  .envの編集
+
+compser install
+
+npm install
+
+npm run dev/npm run prod
+
+--------------------------------------
+ダウンロードしたファイルは既に誰かが作成したものだからそのファイルをダウンロードして自分で手直しする場合は、URLを変更する必要がある
+$ git remote set-url origin [変更先のURL]
+追加は「git remote add」
+削除は「git remote rm」
+確認は「git remote -v」
+URL変更は「git remote set-url」
+名前変更は「git remote rename」
