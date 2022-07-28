@@ -337,3 +337,8 @@ FK・・・外部キー制約（foreign）
  PKをid以外にする場合には
  マイグレーションにprimaryを追記
  モデル・・・belongsTo
+
+ DBのテーブルを作成する場合は必ずprimaryキーが必要
+ Laravelでテーブルを作成する場合にはbigIncrementがprimaryキー
+ なのでその部分を変更したときには改めて設定する必要がある
+  $table->primary(['route_id','shop_id']);
